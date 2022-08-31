@@ -51,6 +51,39 @@ function App() {
       },
     ],
   };
+  const labels2 = [
+    'Q1 2014',
+    'Q2 2014',
+    'Q3 2014',
+    'Q4 2014',
+    'Q1 2015',
+    'Q2 2015',
+    'Q3 2015',
+    'Q4 2015',
+    'Q1 2016',
+    'Q2 2016',
+    'Q3 2016',
+    'Q4 2016',
+    'Q1 2017',
+    'Q2 2017',
+    'Q3 2017',
+    'Q4 2017',
+    'Q1 2018',
+    'Q2 2018',
+    'Q3 2018',
+    'Q4 2018'
+  ];
+  const data4 = {
+    labels: labels2,
+    datasets: [
+      {
+        label: 'Mac',
+        data: [4837, 4136, 4413, 5520, 5519, 4563, 4796, 5709, 5312, 4034, 4252, 4886, 5374, 4199, 4292, 5386, 5112, 4078, 3720, 5299],
+        backgroundColor: chartColors.CO4,
+      }
+    ]
+  };
+
   return (
     <div className="App">
       aa
@@ -76,6 +109,35 @@ function App() {
               y: {
                 stacked: true,
               },
+            },
+          }}
+        />
+        </div>
+
+        <div style={{width: '800px', position: 'relative'}}>
+        <Chart
+          type="bar"
+          data={data4}
+          options={{
+            plugins: {
+              title: {
+                display: true,
+                text: 'Sales of Apple Mac Computers',
+                align: 'center',
+              },
+              subtitle: {
+                display: true,
+                text: 'Source: Apple',
+                align: 'center',
+              },
+            },
+            scales: {
+              y: {
+                title: {
+                  display: true,
+                  text: 'Sales (in thousand units)'
+                },
+              }
             },
           }}
         />
